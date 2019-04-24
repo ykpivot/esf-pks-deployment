@@ -19,3 +19,14 @@ spec:
         image: yosepk/esf-image:1.0.27
         ports:
         - containerPort: 80
+        volumeMounts:
+        - name: jdbc-connection-key
+          mountPath: /opt/some/where/connection-string.xml
+          subPath: connection-string.xml
+      volumes:
+      - name: jdbc-connection-key
+        secret:
+          secretName: esf-secret
+          items:
+          - key: jdbc-connection
+            path: connection-string.xml
