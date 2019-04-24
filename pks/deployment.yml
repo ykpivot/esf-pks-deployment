@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: sample-app
-        image: yosepk/esf-image:1.0.27
+        image: yosepk/esf-image:1.0.5
         ports:
         - containerPort: 80
         volumeMounts:
